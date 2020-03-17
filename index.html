@@ -15,29 +15,31 @@
 </head>
 <body>
     
+    <!--
     <div class = "home">
 
         <div class = "top-items">
             <h1>Admitere FMI</h1>
             <img class = "logo-fmi" src = "assets/LogoFMI.png"></img>
             <br></br>
-            <a class = "main-button">Simulare</a>
-            <a class = "main-button">Mod învățare</a>
-            <a class = "main-button">Continuă</a>
+            <button class = "main-button">Simulare</button>
+            <button class = "main-button">Mod învățare</button>
+            <button class = "main-button">Continuă</button>
         </div>
         <div class = "bottom-items">
-            <a class = "main-button">Editează</a>
+            <button class = "main-button">Editează</button>
         </div>
     </div>
+-->
 
 <!--
     <div class = "exam-page">
     
         <div class = "top-bar">
             <div class = "top-bar content">
-                <a><i class="fa fa-home fa-2x"></i></a>
-                <a><i class="fa fa-print fa-2x"></i></a>
-                <a><i class="fa fa-question-circle fa-2x"></i></a>
+                <button><i class="fa fa-home fa-2x"></i></button>
+                <button><i class="fa fa-print fa-2x"></i></button>
+                <button><i class="fa fa-question-circle fa-2x"></i></button>
             </div>
         </div>
         <div class = "exam-content">
@@ -52,10 +54,11 @@
     
     </div>
 -->
+
 <!--
     <div class = "edit-list-page">
         
-        <a class = "edit-list-home"><i class="fa fa-home fa-2x single-home"></i></a>
+        <button class = "edit-list-home"><i class="fa fa-home fa-2x single-home"></i></button>
 
         <div class = "subject-items-list subjects">
             <h1 class = "subject-title">Subiecte</h1>
@@ -98,7 +101,44 @@
         </div>
 
     </div>
--->
+    -->
+
+    <div class = "edit-entry-page">
+
+        <a class = "edit-list-home"><i class="fa fa-home fa-2x single-home"></i></a>
+
+        <div class = "subject-items-list">
+            <div class = "entry-edit-field">
+                <label class = "entry-field-label">Denumire: </label>
+                <input class = "input-method" type = "text"></input>
+            </div>
+            <div class = "entry-edit-field">
+                <label class = "entry-field-label">Imagine: </label>
+                <input class = "input-method" type = "file"></input>
+            </div>
+            <div class = "entry-edit-field">
+                <label class = "entry-field-label">Tip: </label>
+                <select class = "input-method">
+                    <option value = "subject">Subiect</option>
+                    <option value = "solution">Rezolvare</option>
+                </select>
+            </div>
+            <div class = "entry-edit-field">
+                <label class = "entry-field-label">Materie: </label>
+                <select class = "input-method">
+                    <option value = "algebra">Algebră</option>
+                    <option value = "calculus">Analiză</option>
+                    <option value = "geometry">Geometrie</option>
+                    <option value = "informatics">Informatică</option>
+                </select>
+            </div>
+            <div class = "bottom-buttons">
+                <button class = "bottom-button delete">Delete</button>
+                <button class = "bottom-button">Save</button>
+            </div>
+        </div>
+
+    </div>
 
 </body>
 </html>
