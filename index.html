@@ -15,29 +15,27 @@
 </head>
 <body>
     
-    <!--
+    
     <div class = "home">
 
         <div class = "top-items">
             <h1>Admitere FMI</h1>
             <img class = "logo-fmi" src = "assets/LogoFMI.png"></img>
             <br></br>
-            <button class = "main-button">Simulare</button>
-            <button class = "main-button">Mod învățare</button>
-            <button class = "main-button">Continuă</button>
+            <button class = "main-button" onclick="switchPage(PagesEnum.Exam)">Simulare</button>
+            <button class = "main-button" onclick="switchPage(PagesEnum.Exam)">Mod învățare</button>
+            <button class = "main-button" onclick="switchPage(PagesEnum.Exam)">Continuă</button>
         </div>
         <div class = "bottom-items">
-            <button class = "main-button">Editează</button>
+            <button class = "main-button" onclick="switchPage(PagesEnum.Edit)">Editează</button>
         </div>
     </div>
--->
 
-<!--
     <div class = "exam-page">
     
         <div class = "top-bar">
             <div class = "top-bar content">
-                <button><i class="fa fa-home fa-2x"></i></button>
+                <button><i class="fa fa-home fa-2x" onclick="switchPage(PagesEnum.Home)"></i></button>
                 <button><i class="fa fa-print fa-2x"></i></button>
                 <button><i class="fa fa-question-circle fa-2x"></i></button>
             </div>
@@ -53,12 +51,10 @@
         </div>
     
     </div>
--->
 
-<!--
     <div class = "edit-list-page">
         
-        <button class = "edit-list-home"><i class="fa fa-home fa-2x single-home"></i></button>
+        <button class = "edit-list-home" onclick="switchPage(PagesEnum.Home)"><i class="fa fa-home fa-2x single-home"></i></button>
 
         <div class = "subject-items-list subjects">
             <h1 class = "subject-title">Subiecte</h1>
@@ -101,11 +97,10 @@
         </div>
 
     </div>
-    -->
 
     <div class = "edit-entry-page">
 
-        <a class = "edit-list-home"><i class="fa fa-home fa-2x single-home"></i></a>
+        <a class = "edit-list-home" onclick="switchPage(PagesEnum.Home)"><i class="fa fa-home fa-2x single-home"></i></a>
 
         <div class = "subject-items-list">
             <div class = "entry-edit-field">
@@ -141,4 +136,7 @@
     </div>
 
 </body>
+
+<script src = "js/transitions.js"></script>
+
 </html>
