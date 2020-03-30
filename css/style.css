@@ -1,68 +1,61 @@
 html {
-    font-family: 'Open Sans', sans-serif;
-    color: white;
-    background-color: #2789F9;
+    font-family: "Source Code Pro", monospace;
+    color: black;
+    background-color: white;
 }
 
-button{
+button {
     border: none;
     background: none;
-	color: inherit;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
+    color: inherit;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
     outline: inherit;
     display: block;
 }
 
-.home {
+.top-bar-container {
     margin: 0;
-    display: grid;
-    grid-template-rows: 12fr 1fr;
-    grid-template-areas:
-        ". container ."
-        ". footer .";
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
 }
 
-.top-items {
-    grid-area: container;
+.top-bar {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.bottom-items {
-    grid-area: footer;
-    display: flex;
-    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: silver;
 }
 
 .logo-fmi {
     width: 150px;
 }
 
-.main-button {
-    display: inline-block;
-    margin: 5px;
-    width: 15em;
-    padding: 10px 40px 10px 40px;
-    background-color: white;
-    text-decoration: none;
+.main-title {
+    padding: 10px;
+    margin: 0px;
+    font-size: 20px;
     font-weight: bold;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #066FE7;
-    text-align: center;
-    border-radius: 25px;
 }
 
-.top-bar {
-    width: calc(100%);
-    padding: 5px;
-    background-color: white;
-    border-color: #066fe7;
-    border-style: solid;
-    border-width: 1px;
+.main-title:hover {
+    color: grey;
+}
+
+.main-button {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+.main-button:hover {
+    color: grey;
 }
 
 .top-bar.content {
@@ -71,27 +64,34 @@ button{
     justify-content: space-around;
 }
 
-.fa {
-    color:#066FE7;
-}
-
 .exam-content {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
+}
+
+.exam-info-block {
+    background-color: silver;
+    align-self: flex-end;
+    transform: translate(0, -43px);
+}
+
+.exam-info {
+    margin: 0px;
+    font-weight: normal;
+    padding: 10px;
 }
 
 .subjects-container {
     display: flex;
-    padding: 10px;
-    margin-top: -20px;
-    align-items: center;
-    flex-direction: column;
+    padding: 5px;
+    align-items: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .subject-image {
     margin: 10px;
-    border-color: #066fe7;
     border-style: solid;
     border-width: 1px;
 }
@@ -119,26 +119,23 @@ button{
     background-color: white;
     flex-direction: column;
     align-items: center;
-    border-radius: 25px;
     padding-bottom: 10px;
 }
 
-.topics-list
-{
+.topics-list {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    background-color: silver;
 }
 
 .subject-title {
-    color: #066fe7;
-    margin-left: 20px;
-    text-transform: uppercase;
-    align-self: flex-start;
+    color: black;
+    margin: 0px;
 }
 
 .subject-subtitle {
-    color:#066fe7;
+    color: black;
 }
 
 .subject-list {
@@ -146,22 +143,30 @@ button{
     align-items: center;
     flex-direction: column;
     margin: 5px;
-    background-color: white;
-    border-radius: 25px;
+    background-color: silver;
     width: 200px;
     border-width: 1px;
-    border-style: solid;
-    border-color: #066FE7;
     padding-bottom: 10px;
 }
 
 .edit-link {
-    color: #066FE7; 
+    color: black;
 }
 
 .edit-entry-page {
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
+}
+
+.edit-items-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: silver;
+    width: 990px;
+    margin: 10px;
+    align-self: center;
+    padding-bottom: 10px;
 }
 
 .entry-edit-field {
@@ -172,7 +177,7 @@ button{
 }
 
 .entry-field-label {
-    color: #066FE7;
+    color: black;
     grid-column: 1;
 }
 
@@ -181,25 +186,17 @@ button{
 }
 
 .bottom-buttons {
-    background-color: white;
+    background-color: silver;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: row;
-    padding-top: 50px;
-    width: calc(95%);
-    border-radius: 25px;
+}
+
+.bottom-button:hover {
+    color: grey;
 }
 
 .bottom-button {
-    color: #066FE7;
+    color: black;
     padding: 10px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #066FE7;
-    border-radius: 25px;
-}
-
-.bottom-button.delete {
-    color: #ff006c;
-    border-color: #ff006c;
 }

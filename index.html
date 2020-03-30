@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,129 +8,132 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
 
     <script src="https://use.fontawesome.com/4010e64e85.js"></script>
 
 </head>
+
 <body>
-    
-    
-    <div class = "home">
 
-        <div class = "top-items">
-            <h1>Admitere FMI</h1>
-            <img class = "logo-fmi" src = "assets/LogoFMI.png"></img>
+    <div class="top-bar-container">
+        <div class="top-bar">
+            <button class="main-title" onclick="switchPage(PagesEnum.Home)">Admitere FMI</button>
+            <!--<img class="logo-fmi" src="assets/LogoFMI.png"></img>-->
             <br></br>
-            <button class = "main-button" onclick="switchPage(PagesEnum.Exam)">Simulare</button>
-            <button class = "main-button" onclick="switchPage(PagesEnum.Exam)">Mod învățare</button>
-            <button class = "main-button" onclick="switchPage(PagesEnum.Exam)">Continuă</button>
-        </div>
-        <div class = "bottom-items">
-            <button class = "main-button" onclick="switchPage(PagesEnum.Edit)">Editează</button>
+
+            <div id="home-top-buttons">
+                <button class="main-button" onclick="switchPage(PagesEnum.Exam)">[Simulare]</button>
+                <button class="main-button" onclick="switchPage(PagesEnum.Exam)">[Mod învățare]</button>
+                <button class="main-button" onclick="switchPage(PagesEnum.Exam)">[Continuă]</button>
+                <button class="main-button" onclick="switchPage(PagesEnum.Edit)">[Editează]</button>
+            </div>
+
+            <div id="exam-top-buttons">
+                <button class="main-button">[Printează]</button>
+                <button class="main-button">[Soluții]</button>
+            </div>
+
+            <div id="edit-top-buttons">
+                <button class="main-button" onclick="switchPage(PagesEnum.EditEntry)">[Adaugă subiect]</button>
+            </div>
+
         </div>
     </div>
 
-    <div class = "exam-page">
-    
-        <div class = "top-bar">
-            <div class = "top-bar content">
-                <button><i class="fa fa-home fa-2x" onclick="switchPage(PagesEnum.Home)"></i></button>
-                <button><i class="fa fa-print fa-2x"></i></button>
-                <button><i class="fa fa-question-circle fa-2x"></i></button>
-            </div>
-        </div>
-        <div class = "exam-content">
-            <h2>Timp rămas: 3:00:00</h2>
-            <h2>SUBIECTE</h2>
-            <div class = "subjects-container">
-                <img class = "subject-image" src = "assets/subiect.png"></img>
-                <img class = "subject-image" src = "assets/solutie1.png"></img>
-                <img class = "subject-image" src = "assets/solutie2.png"></img>
-            </div>
-        </div>
-    
+    <div class="home">
     </div>
 
-    <div class = "edit-list-page">
-        
-        <button class = "edit-list-home" onclick="switchPage(PagesEnum.Home)"><i class="fa fa-home fa-2x single-home"></i></button>
-
-        <div class = "subject-items-list subjects">
-            <h1 class = "subject-title">Subiecte</h1>
-            <div class = "topics-list">
-                <div class = "subject-list algebra">
-                    <h2 class = "subject-subtitle">Algebră</h2>
-                    <a class = "edit-link">Exemplu algebra</a>
-                    <a class = "edit-link">Exemplu2 algebra</a>
-                </div>
-                <div class = "subject-list calculus">
-                    <h2 class = "subject-subtitle">Analiză</h2>
-                </div>
-                <div class = "subject-list geometry">
-                    <h2 class = "subject-subtitle">Geometrie</h2>
-                </div>
-                <div class = "subject-list informatics">
-                    <h2 class = "subject-subtitle">Informatică</h2>
-                    <a class = "edit-link">Exemplu informatica</a>
-                </div>
+    <div class="exam-page">
+        <div class="exam-content">
+            <div class="exam-info-block">
+                <h2 class="exam-info">Timp rămas: 3:00:00</h2>
+                <h2 class="exam-info">Mod: subiecte</h2>
             </div>
-        </div>
-
-        <div class = "subject-items-list solutions">
-            <h1 class = "subject-title">Rezolvări</h1>
-            <div class = "topics-list">
-                <div class = "subject-list algebra">
-                    <h2 class = "subject-subtitle">Algebră</h2>
-                    <a class = "edit-link">Exemplu algebra</a>
-                </div>
-                <div class = "subject-list calculus">
-                    <h2 class = "subject-subtitle">Analiză</h2>
-                </div>
-                <div class = "subject-list geometry">
-                    <h2 class = "subject-subtitle">Geometrie</h2>
-                </div>
-                <div class = "subject-list informatics">
-                    <h2 class = "subject-subtitle">Informatică</h2>
-                </div>
+            <div class="subjects-container">
+                <img class="subject-image" src="assets/subiect.png"></img>
+                <img class="subject-image" src="assets/solutie1.png"></img>
+                <img class="subject-image" src="assets/solutie2.png"></img>
             </div>
         </div>
 
     </div>
 
-    <div class = "edit-entry-page">
+    <div class="edit-list-page">
 
-        <a class = "edit-list-home" onclick="switchPage(PagesEnum.Home)"><i class="fa fa-home fa-2x single-home"></i></a>
+        <div class="subject-items-list subjects">
+            <h1 class="subject-title">Subiecte</h1>
+            <div class="topics-list">
+                <div class="subject-list algebra">
+                    <h2 class="subject-subtitle">Algebră</h2>
+                    <a class="edit-link">Exemplu algebra</a>
+                    <a class="edit-link">Exemplu2 algebra</a>
+                </div>
+                <div class="subject-list calculus">
+                    <h2 class="subject-subtitle">Analiză</h2>
+                </div>
+                <div class="subject-list geometry">
+                    <h2 class="subject-subtitle">Geometrie</h2>
+                </div>
+                <div class="subject-list informatics">
+                    <h2 class="subject-subtitle">Informatică</h2>
+                    <a class="edit-link">Exemplu informatica</a>
+                </div>
+            </div>
+        </div>
 
-        <div class = "subject-items-list">
-            <div class = "entry-edit-field">
-                <label class = "entry-field-label">Denumire: </label>
-                <input class = "input-method" type = "text"></input>
+        <div class="subject-items-list solutions">
+            <h1 class="subject-title">Rezolvări</h1>
+            <div class="topics-list">
+                <div class="subject-list algebra">
+                    <h2 class="subject-subtitle">Algebră</h2>
+                    <a class="edit-link">Exemplu algebra</a>
+                </div>
+                <div class="subject-list calculus">
+                    <h2 class="subject-subtitle">Analiză</h2>
+                </div>
+                <div class="subject-list geometry">
+                    <h2 class="subject-subtitle">Geometrie</h2>
+                </div>
+                <div class="subject-list informatics">
+                    <h2 class="subject-subtitle">Informatică</h2>
+                </div>
             </div>
-            <div class = "entry-edit-field">
-                <label class = "entry-field-label">Imagine: </label>
-                <input class = "input-method" type = "file"></input>
+        </div>
+
+    </div>
+
+    <div class="edit-entry-page">
+
+        <div class="edit-items-list">
+            <div class="entry-edit-field">
+                <label class="entry-field-label">Denumire: </label>
+                <input class="input-method" type="text"></input>
             </div>
-            <div class = "entry-edit-field">
-                <label class = "entry-field-label">Tip: </label>
-                <select class = "input-method">
-                    <option value = "subject">Subiect</option>
-                    <option value = "solution">Rezolvare</option>
+            <div class="entry-edit-field">
+                <label class="entry-field-label">Imagine: </label>
+                <input class="input-method" type="file"></input>
+            </div>
+            <div class="entry-edit-field">
+                <label class="entry-field-label">Tip: </label>
+                <select class="input-method">
+                    <option value="subject">Subiect</option>
+                    <option value="solution">Rezolvare</option>
                 </select>
             </div>
-            <div class = "entry-edit-field">
-                <label class = "entry-field-label">Materie: </label>
-                <select class = "input-method">
-                    <option value = "algebra">Algebră</option>
-                    <option value = "calculus">Analiză</option>
-                    <option value = "geometry">Geometrie</option>
-                    <option value = "informatics">Informatică</option>
+            <div class="entry-edit-field">
+                <label class="entry-field-label">Materie: </label>
+                <select class="input-method">
+                    <option value="algebra">Algebră</option>
+                    <option value="calculus">Analiză</option>
+                    <option value="geometry">Geometrie</option>
+                    <option value="informatics">Informatică</option>
                 </select>
             </div>
-            <div class = "bottom-buttons">
-                <button class = "bottom-button delete">Delete</button>
-                <button class = "bottom-button">Save</button>
+            <div class="bottom-buttons">
+                <button class="bottom-button delete">[Șterge]</button>
+                <button class="bottom-button">[Salvează]</button>
             </div>
         </div>
 
@@ -137,6 +141,6 @@
 
 </body>
 
-<script src = "js/transitions.js"></script>
+<script src="js/transitions.js"></script>
 
 </html>
