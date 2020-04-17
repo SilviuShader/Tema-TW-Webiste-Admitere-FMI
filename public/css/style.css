@@ -1,0 +1,252 @@
+html {
+    font-family: "Source Code Pro", monospace;
+    color: black;
+    background-color: white;
+}
+
+button {
+    border: none;
+    background: none;
+    color: inherit;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    display: block;
+}
+
+.dialogue {
+    margin: 0px;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.top-bar-container {
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.top-bar {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: silver;
+}
+
+.logo-fmi {
+    width: 150px;
+}
+
+.main-title {
+    padding: 10px;
+    margin: 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.main-title:hover {
+    color: grey;
+}
+
+.main-button {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+.main-button:hover {
+    color: grey;
+}
+
+.top-bar.content {
+    display: flex;
+    border-style: none;
+    justify-content: space-around;
+}
+
+.exam-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.exam-info-block {
+    background-color: silver;
+    align-self: flex-start;
+}
+
+.exam-info {
+    margin: 0px;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.subjects-container {
+    display: flex;
+    padding: 5px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.subject-image {
+    margin: 5px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: silver;
+}
+
+.edit-list-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-list-home {
+    display: block;
+    padding: 20px;
+    align-self: flex-start;
+}
+
+.single-home {
+    color: white;
+}
+
+.subject-items-list {
+    display: flex;
+    margin: 20px;
+    align-self: center;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.topics-list {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background-color: silver;
+}
+
+.subject-title {
+    color: black;
+    margin: 0px;
+}
+
+.subject-subtitle {
+    color: black;
+}
+
+.subject-list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 5px;
+    background-color: silver;
+    width: 200px;
+    border-width: 1px;
+    padding-bottom: 10px;
+}
+
+.edit-link {
+    color: black;
+}
+
+.edit-entry-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-items-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: silver;
+    width: 990px;
+    margin: 10px;
+    align-self: center;
+    padding-bottom: 10px;
+}
+
+.entry-edit-field {
+    margin: 10px;
+    align-self: flex-start;
+    display: grid;
+    grid-template-columns: 90px 1fr;
+}
+
+.entry-field-label {
+    color: black;
+    grid-column: 1;
+}
+
+.input-method {
+    grid-column: 2;
+}
+
+.bottom-buttons {
+    background-color: silver;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.bottom-button:hover {
+    color: grey;
+}
+
+.bottom-button {
+    color: black;
+    padding: 10px;
+}
+
+@media (max-width: 1280px) {
+    .top-bar {
+        width: calc(100%);
+    }
+
+    .exam-info-block {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: calc(100%);
+    }
+
+    .edit-items-list {
+        width: 768px;
+    }
+}
+
+@media (max-width: 768px) {
+    .topics-list {
+        flex-wrap: wrap;
+    }
+
+    .edit-items-list {
+        width: calc(100%);
+    }
+}
+
+@media print {
+    .top-bar {
+        display: none;
+    }
+
+    .exam-info-block {
+        display: none;
+    }
+
+    .subject-image {
+        border-width: 0px;
+    }
+}

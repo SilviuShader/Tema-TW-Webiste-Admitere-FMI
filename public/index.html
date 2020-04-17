@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admitere FMI</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://use.fontawesome.com/4010e64e85.js"></script>
+
+</head>
+
+<body>
+
+    <div class="top-bar-container">
+        <div class="top-bar">
+            <button class="main-title" onclick="switchPage(PagesEnum.Home)">Admitere FMI</button>
+            <!--<img class="logo-fmi" src="assets/LogoFMI.png"></img>-->
+            <br></br>
+
+            <div id="home-top-buttons">
+                <button class="main-button" onclick="switchPage(PagesEnum.Exam)">[Simulare]</button>
+                <button class="main-button" onclick="switchPage(PagesEnum.Prepare)">[Mod învățare]</button>
+                <button class="main-button" onclick="switchPage(PagesEnum.Continue)">[Continuă]</button>
+                <button class="main-button" onclick="switchPage(PagesEnum.Edit)">[Editează]</button>
+            </div>
+
+            <div id="exam-top-buttons">
+                <button class="main-button" onclick="window.print()">[Printează]</button>
+                <button class="main-button" id="solution-button" onclick="solutionButtonPressed()">[Soluții]</button>
+            </div>
+
+            <div id="edit-top-buttons">
+                <button class="main-button" onclick="switchPage(PagesEnum.EditEntry)">[Adaugă subiect]</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="home">
+        <br />
+        <p class="dialogue"> - Hey! Esti clasa a XII-a si urmează să dai admiterea la o facultate de informatică din
+            România?</p>
+        <p class="dialogue"> - Daa... este oribil, nu stiu ce mă voi face la admitere.</p>
+        <p class="dialogue"> - Stai calm ca te ajută fratele tău care a intrat.</p>
+        <p class="dialogue"> - Wow, mulțumesc!!! Dar cum mă vei ajuta să intru la facultate?</p>
+        <p class="dialogue"> - Foarte simplu. Am făcut această aplicație prin care te poți pregăti.</p>
+        <p class="dialogue"> - Wow, ok.. dar cum se folosește această aplicație?</p>
+        <p class="dialogue"> - Te prinzi tu, acum am treabă, nu stau sa-ți explic... vezi si tu pe-acolo...</p>
+        <p class="dialogue"> - Ok... îți mulțumesc... I suppose...</p>
+        <p class="dialogue"> * poof *</p>
+
+    </div>
+
+    <div class="exam-page">
+        <div class="exam-content">
+            <div class="exam-info-block">
+                <p class="exam-info" id="exam-time">Timp rămas: 3:00:00</p>
+                <p class="exam-info" id="exam-mode">Mod: subiecte</p>
+            </div>
+            <div class="subjects-container" id="subjects-container">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="edit-list-page">
+
+        <div class="subject-items-list subjects">
+            <h1 class="subject-title">Subiecte</h1>
+            <div class="topics-list" id="subjects-list">
+                <div class="subject-list algebra">
+                    <h2 class="subject-subtitle">Algebră</h2>
+                    <div id="algebra-list">
+                    </div>
+                </div>
+                <div class="subject-list calculus">
+                    <h2 class="subject-subtitle">Analiză</h2>
+                    <div id="calculus-list">
+                    </div>
+                </div>
+                <div class="subject-list geometry">
+                    <h2 class="subject-subtitle">Geometrie</h2>
+                    <div id="geometry-list">
+                    </div>
+                </div>
+                <div class="subject-list informatics">
+                    <h2 class="subject-subtitle">Informatică</h2>
+                    <div id="informatics-list">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="edit-entry-page">
+
+        <div class="edit-items-list">
+            <div class="entry-edit-field">
+                <label class="entry-field-label">Denumire: </label>
+                <input class="input-method" type="text" id="subject-name-field"></input>
+            </div>
+            <div class="entry-edit-field">
+                <label class="entry-field-label">Subiect: </label>
+                <input class="input-method" type="file" id="subject-image-field"
+                    onchange="onSubjectFileSelected(event, 'subject')"></input>
+            </div>
+            <div class="entry-edit-field">
+                <label class="entry-field-label">Solutie: </label>
+                <input class="input-method" type="file" id="solution-image-field"
+                    onchange="onSubjectFileSelected(event, 'solution')"></input>
+            </div>
+            <div class="entry-edit-field">
+                <label class="entry-field-label">Materie: </label>
+                <select class="input-method" id="subject-exercise-field">
+                    <option value="algebra">Algebră</option>
+                    <option value="calculus">Analiză</option>
+                    <option value="geometry">Geometrie</option>
+                    <option value="informatics">Informatică</option>
+                </select>
+            </div>
+            <div class="bottom-buttons">
+                <button class="bottom-button delete" onclick="deleteSubjectPressed()">[Șterge]</button>
+                <button class="bottom-button" onclick="saveSubjectPressed()">[Salvează]</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<script src="js/transitions.js"></script>
+<script src="js/editList.js"></script>
+<script src="js/examPage.js"></script>
+<script src="js/editSubject.js"></script>
+<script src="js/crud.js"></script>
+
+</html>
