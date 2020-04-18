@@ -21,6 +21,20 @@ button {
     padding-left: 10px;
 }
 
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: silver;
+    text-align: center;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: black;
+}
+
 .top-bar-container {
     margin: 0;
     display: flex;
@@ -163,19 +177,37 @@ button {
 }
 
 .edit-entry-page {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 4fr;
 }
 
 .edit-items-list {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: silver;
-    width: 990px;
+    margin: 20px;
+}
+
+.subject-photos {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    margin: 20px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 720px;
+}
+
+.photo-title {
     margin: 10px;
-    align-self: center;
-    padding-bottom: 10px;
+    font-weight: bold;
 }
 
 .entry-edit-field {
@@ -192,6 +224,7 @@ button {
 
 .input-method {
     grid-column: 2;
+    width: 250px;
 }
 
 .bottom-buttons {
@@ -222,8 +255,23 @@ button {
         width: calc(100%);
     }
 
+
+    .edit-entry-page {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 5fr;
+    }
+
     .edit-items-list {
-        width: 768px;
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .subject-photos {
+        grid-column-start: 1;
+        grid-row-start: 2;
+        max-width: calc(100%);
     }
 }
 
@@ -233,6 +281,14 @@ button {
     }
 
     .edit-items-list {
+        width: calc(100%);
+    }
+
+    .subject-edit-image {
+        width: calc(100%);
+    }
+
+    .subject-image {
         width: calc(100%);
     }
 }
@@ -248,5 +304,9 @@ button {
 
     .subject-image {
         border-width: 0px;
+    }
+
+    .footer {
+        display: none;
     }
 }

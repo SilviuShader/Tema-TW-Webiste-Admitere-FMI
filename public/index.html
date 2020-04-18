@@ -18,7 +18,7 @@
 <body>
 
     <div class="top-bar-container">
-        <div class="top-bar">
+        <nav class="top-bar">
             <button class="main-title" onclick="switchPage(PagesEnum.Home)">Admitere FMI</button>
             <!--<img class="logo-fmi" src="assets/LogoFMI.png"></img>-->
             <br></br>
@@ -39,10 +39,10 @@
                 <button class="main-button" onclick="switchPage(PagesEnum.EditEntry)">[Adaugă subiect]</button>
             </div>
 
-        </div>
+        </nav>
     </div>
 
-    <div class="home">
+    <main class="home">
         <br />
         <p class="dialogue"> - Hey! Esti clasa a XII-a si urmează să dai admiterea la o facultate de informatică din
             România?</p>
@@ -55,21 +55,21 @@
         <p class="dialogue"> - Ok... îți mulțumesc... I suppose...</p>
         <p class="dialogue"> * poof *</p>
 
-    </div>
+    </main>
 
-    <div class="exam-page">
-        <div class="exam-content">
+    <main class="exam-page">
+        <section class="exam-content">
             <div class="exam-info-block">
                 <p class="exam-info" id="exam-time">Timp rămas: 3:00:00</p>
                 <p class="exam-info" id="exam-mode">Mod: subiecte</p>
             </div>
             <div class="subjects-container" id="subjects-container">
             </div>
-        </div>
+        </section>
 
-    </div>
+    </main>
 
-    <div class="edit-list-page">
+    <main class="edit-list-page">
 
         <div class="subject-items-list subjects">
             <h1 class="subject-title">Subiecte</h1>
@@ -96,9 +96,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <div class="edit-entry-page">
+    <main class="edit-entry-page">
 
         <div class="edit-items-list">
             <div class="entry-edit-field">
@@ -129,8 +129,20 @@
                 <button class="bottom-button" onclick="saveSubjectPressed()">[Salvează]</button>
             </div>
         </div>
+        <div class="subject-photos">
+            <p class="photo-title">Subiect</p>
+            <img class="subject-edit-image" id="subject-edit-image" src=""></img>
+            <p class="photo-title">Soluție</p>
+            <img class="subject-edit-image" id="solution-edit-image" src=""></img>
+        </div>
 
-    </div>
+    </main>
+
+    <footer class="footer">
+        <a href="https://play.google.com/store/apps/details?id=com.SilviuShader.Admitere_FMI" class="footer-link"
+            target="_blank">Descarcă aplicația pentru
+            Android</a>
+    </footer>
 
 </body>
 

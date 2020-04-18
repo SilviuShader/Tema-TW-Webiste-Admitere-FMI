@@ -9,7 +9,31 @@ const PagesEnum = {
 
 let currentPage = null;
 
+function saveExam() {
+    if (exam) {
+        localStorage.setItem("exam", JSON.stringify(exam));
+        localStorage.setItem("examTime", examTime.toString());
+    }
+}
+
+function loadExam() {
+    let ex = localStorage.getItem("exam");
+    if (ex) {
+        exam = JSON.parse(ex);
+        let exTime = Number(localStorage.getItem("examTime"));
+        clearTimer();
+        if (exTime != totalExamTime) {
+            startTimer(exTime);
+        }
+    }
+}
+
 function switchPage(page) {
+
+    if (currentPage == PagesEnum.Exam || currentPage == PagesEnum.Continue || currentPage == PagesEnum.Prepare) {
+        saveExam();
+    }
+
     currentPage = page;
     let home = document.getElementsByClassName("home")[0];
     let examP = document.getElementsByClassName("exam-page")[0];
@@ -42,7 +66,7 @@ function switchPage(page) {
                 updateExamContent();
                 updateSolutionButton();
                 clearTimer();
-                startTimer();
+                startTimer(totalExamTime);
                 showTimer();
             });
             break;
@@ -58,6 +82,7 @@ function switchPage(page) {
             });
             break;
         case PagesEnum.Continue:
+            loadExam();
             if (exam) {
                 examP.style.display = "block";
                 examTopButtons.style.display = "block";
@@ -75,7 +100,7 @@ function switchPage(page) {
             updateEditList();
             break;
         case PagesEnum.EditEntry:
-            editEntry.style.display = "flex";
+            editEntry.style.display = "grid";
             autofillEntry();
             break;
     }

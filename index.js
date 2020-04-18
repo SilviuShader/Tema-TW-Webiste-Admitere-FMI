@@ -86,6 +86,22 @@ app.put("/subjects/:id", (request, response) => {
     });
 });
 
+// read one
+app.get("/subjects/:id", (request, response) => {
+    let id = request.params.id;
+    let subjects = readJSONFile();
+
+    let crtVal = subjects.find(x => x.id == id);
+
+    console.log(crtVal);
+    let img = getImgSrcString(readImage(crtVal.img));
+    crtVal.img = img;
+    let solImg = getImgSrcString(readImage(crtVal.solImg));
+    crtVal.solImg = solImg;
+
+    response.json(crtVal);
+});
+
 // delete
 app.delete("/subjects/:id", (request, response) => {
     let subjects = readJSONFile();

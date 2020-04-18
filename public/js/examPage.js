@@ -4,8 +4,8 @@ const totalExamTime = 3 * 3600;
 let examTime = totalExamTime;
 let timerInterval = null;
 
-function startTimer() {
-    examTime = totalExamTime;
+function startTimer(tm) {
+    examTime = tm;
     updateTimerLabel();
     timerInterval = setInterval(timerUpdate, 1000);
 }
@@ -20,7 +20,8 @@ function hideTimer() {
 
 function timerUpdate() {
     examTime -= 1;
-    updateTimerLabel();
+    if (examTime >= 0)
+        updateTimerLabel();
     if (examTime <= 0) {
         clearTimer()
     }
