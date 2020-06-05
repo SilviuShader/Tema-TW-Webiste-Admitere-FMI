@@ -28,6 +28,7 @@
                 <button class="main-button" onclick="switchPage(PagesEnum.Prepare)">[Mod învățare]</button>
                 <button class="main-button" onclick="switchPage(PagesEnum.Continue)">[Continuă]</button>
                 <button class="main-button" onclick="switchPage(PagesEnum.Edit)">[Editează]</button>
+                <button class="main-button" onclick="switchPage(PagesEnum.Minigame)">[Minigame]</button>
             </div>
 
             <div id="exam-top-buttons">
@@ -138,6 +139,15 @@
 
     </main>
 
+    <main class="minigame-page">
+        <div class="exam-info-block">
+            <p class="exam-info" id="game-score-label">Scor: 0</p>
+        </div>
+        <div class="game-div">
+        </div>
+        <h1 id="final-score-label">Scorul final este: 0</h1>
+    </main>
+
     <footer class="footer">
         <a href="https://play.google.com/store/apps/details?id=com.SilviuShader.Admitere_FMI" class="footer-link"
             target="_blank">Descarcă aplicația pentru
@@ -151,5 +161,6 @@
 <script src="js/examPage.js"></script>
 <script src="js/editSubject.js"></script>
 <script src="js/crud.js"></script>
+<script src="js/minigame.js"></script>
 
 </html>

@@ -4,7 +4,8 @@ const PagesEnum = {
     "Prepare": 2,
     "Continue": 3,
     "Edit": 4,
-    "EditEntry": 5
+    "EditEntry": 5,
+    "Minigame": 6
 };
 
 let currentPage = null;
@@ -39,11 +40,15 @@ function switchPage(page) {
     let examP = document.getElementsByClassName("exam-page")[0];
     let edit = document.getElementsByClassName("edit-list-page")[0];
     let editEntry = document.getElementsByClassName("edit-entry-page")[0];
+    let minigamePage = document.getElementsByClassName("minigame-page")[0];
 
     home.style.display = "none";
     examP.style.display = "none";
     edit.style.display = "none";
     editEntry.style.display = "none";
+    minigamePage.style.display = "none";
+
+    //endGame();
 
     let homeTopButtons = document.getElementById("home-top-buttons");
     let examTopButtons = document.getElementById("exam-top-buttons");
@@ -102,6 +107,10 @@ function switchPage(page) {
         case PagesEnum.EditEntry:
             editEntry.style.display = "grid";
             autofillEntry();
+            break;
+        case PagesEnum.Minigame:
+            minigamePage.style.display = "flex";
+            startGame();
             break;
     }
 }
