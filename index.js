@@ -16,6 +16,7 @@ const asyncMiddleware = fn =>
 
 const app = express();
 
+app.set('trust proxy', true);
 app.listen(3000, () => console.log("listening at 3000"));
 app.use(express.static("public"));
 app.use(express.json({
@@ -40,6 +41,11 @@ app.post("/subjects", (request, response) => {
 
     writeJSONFile(subjects);
 
+    pushToLog({
+        ip: request.ip,
+        message: `a adaugat un nou subiect de ${data.exercise}: ` + data.name
+    });
+
     response.json({
         status: "success"
     });
@@ -52,6 +58,11 @@ app.get("/subjects", (request, response) => {
     subjects.forEach(element => {
         delete element.img;
         delete element.solImg;
+    });
+
+    pushToLog({
+        ip: request.ip,
+        message: "a cerut sa vizualizeze lista de subiecte."
     });
 
     response.json(subjects);
@@ -79,6 +90,11 @@ app.put("/subjects/:id", (request, response) => {
 
     subjects[index] = obj;
 
+    pushToLog({
+        ip: request.ip,
+        message: `a modificat un subiect de ${obj.exercise}: ` + obj.name
+    });
+
     writeJSONFile(subjects);
 
     response.json({
@@ -99,6 +115,11 @@ app.get("/subjects/:id", (request, response) => {
     let solImg = getImgSrcString(readImage(crtVal.solImg));
     crtVal.solImg = solImg;
 
+    pushToLog({
+        ip: request.ip,
+        message: `a cerut sa vada subiectul de ${crtVal.exercise}: ` + crtVal.name
+    });
+
     response.json(crtVal);
 });
 
@@ -108,6 +129,11 @@ app.delete("/subjects/:id", (request, response) => {
 
     let id = request.params.id;
     let targetObject = subjects.find(x => x.id == id);
+
+    pushToLog({
+        ip: request.ip,
+        message: `a sters subiectul de ${targetObject.exercise}: ` + targetObject.name
+    });
 
     let path = targetObject.img;
     fs.access(path, error => {
@@ -152,6 +178,11 @@ app.get("/exam", asyncMiddleware(async (request, response) => {
 
     await pushImages(result.images, chosenSubjects, "subject");
     await pushImages(result.images, chosenSubjects, "solution");
+
+    pushToLog({
+        ip: request.ip,
+        message: `a primit un examen care consta in: algebra: ${chosenSubjects[0].name}, analiza: ${chosenSubjects[1].name}, geometrie: ${chosenSubjects[2].name}, informatica: algebra: ${chosenSubjects[3].name}`
+    });
 
     /*
     image = {};
@@ -236,6 +267,26 @@ function saveImage(imgData, filename) {
     let base64Data = imgData.replace(/^data:image\/png;base64,/, "");
     let buff = new Buffer(base64Data, 'base64');
     fs.writeFileSync(filename, buff);
+}
+
+function pushToLog(logEvent) {
+    let content = JSON.parse(fs.readFileSync("log.json"))["log"];
+
+    content.push(`[${new Date().toLocaleString().replace(/T/, ' ').
+                                       replace(/\..+/, '') }] ` + logEvent.ip + " " + logEvent.message);
+
+    fs.writeFileSync(
+        "log.json",
+        JSON.stringify({
+            log: content
+        }),
+        "utf8",
+        err => {
+            if (err) {
+                console.log(err);
+            }
+        }
+    );
 }
 
 function readJSONFile() {

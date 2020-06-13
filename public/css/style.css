@@ -1,7 +1,11 @@
 html {
     font-family: "Source Code Pro", monospace;
     color: black;
-    background-color: white;
+}
+
+body {
+    background-image: url("../assets/subiect.png");
+    background-repeat: repeat;
 }
 
 button {
@@ -19,6 +23,25 @@ button {
     margin: 0px;
     font-size: 20px;
     padding-left: 10px;
+}
+
+.home-section {
+    display: block;
+    margin: 20px;
+    background-color: silver;
+}
+
+.log-div {
+    height: 50px;
+    margin: 10px;
+    display: none;
+}
+
+.log-ul {
+    margin: 10px;
+    height: 50px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .footer {
@@ -118,6 +141,7 @@ button {
     border-style: solid;
     border-width: 10px;
     border-color: silver;
+    background-color: white;
 }
 
 .edit-list-page {

@@ -115,4 +115,29 @@ function switchPage(page) {
     }
 }
 
+let ravaseStrings = ["Priveste aceasta sectiune cu text animat. Tare, nu?",
+    "O sa pici la admitere, fraiere.", "O sa iei admiterea cu brio si o sa ajungi in grupa de olimpici.",
+    "Vine bacu baaaa... si dupa urmeaza admiterea.", "Admiterea la FMI Unibuc din 2020 e pe BAC deci nu prea ai nevoie de site-ul asta acum.",
+    "Plot twist, platforma asta e de fapt o tema."
+];
+
+let homeTutorial = document.getElementById("dialogue");
+let conceptSection = document.getElementById("concept-section");
+
+let murphy = document.createElement("p");
+conceptSection.appendChild(murphy);
+
+murphy.textContent = ravaseStrings[Math.floor((Math.random() * ravaseStrings.length))];
+
+animateText(homeTutorial);
+animateText(conceptSection);
 switchPage(PagesEnum.Home);
+
+let translationX = 0;
+let translationY = 0;
+
+setInterval(function () {
+    document.body.style.backgroundPosition = `${translationX}px ${translationY}px`;
+    translationX += 2;
+    translationY -= 1;
+}, 20);

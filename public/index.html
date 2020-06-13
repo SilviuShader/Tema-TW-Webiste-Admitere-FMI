@@ -17,7 +17,12 @@
 
 <body>
 
+    <div id="log-div-id" class="log-div">
+        <ul id="log-ul-id" class="log-ul">
+        </ul>
+    </div>
     <div class="top-bar-container">
+
         <nav class="top-bar">
             <button class="main-title" onclick="switchPage(PagesEnum.Home)">Admitere FMI</button>
             <!--<img class="logo-fmi" src="assets/LogoFMI.png"></img>-->
@@ -29,6 +34,7 @@
                 <button class="main-button" onclick="switchPage(PagesEnum.Continue)">[Continuă]</button>
                 <button class="main-button" onclick="switchPage(PagesEnum.Edit)">[Editează]</button>
                 <button class="main-button" onclick="switchPage(PagesEnum.Minigame)">[Minigame]</button>
+                <button class="main-button" id="logger-toggle" onclick="toggleLogger()">[Activează logger]</button>
             </div>
 
             <div id="exam-top-buttons">
@@ -45,16 +51,20 @@
 
     <main class="home">
         <br />
-        <p class="dialogue"> - Hey! Esti clasa a XII-a si urmează să dai admiterea la o facultate de informatică din
-            România?</p>
-        <p class="dialogue"> - Daa... este oribil, nu stiu ce mă voi face la admitere.</p>
-        <p class="dialogue"> - Stai calm ca te ajută fratele tău care a intrat.</p>
-        <p class="dialogue"> - Wow, mulțumesc!!! Dar cum mă vei ajuta să intru la facultate?</p>
-        <p class="dialogue"> - Foarte simplu. Am făcut această aplicație prin care te poți pregăti.</p>
-        <p class="dialogue"> - Wow, ok.. dar cum se folosește această aplicație?</p>
-        <p class="dialogue"> - Te prinzi tu, acum am treabă, nu stau sa-ți explic... vezi si tu pe-acolo...</p>
-        <p class="dialogue"> - Ok... îți mulțumesc... I suppose...</p>
-        <p class="dialogue"> * poof *</p>
+        <section class="home-section" id="dialogue">
+            <p> - Hey! Esti clasa a XII-a si urmează să dai admiterea la o facultate de informatică din România?</p>
+            <p> - Daa... este oribil, nu stiu ce mă voi face la admitere.</p>
+            <p> - Stai calm ca te ajută fratele tău care a intrat.</p>
+            <p> - Wow, mulțumesc!!! Dar cum mă vei ajuta să intru la facultate?</p>
+            <p> - Foarte simplu. Am făcut această aplicație prin care te poți pregăti.</p>
+            <p> - Wow, ok.. dar cum se folosește această aplicație?</p>
+            <p> - Te prinzi tu, acum am treabă, nu stau sa-ți explic... vezi si tu pe-acolo...</p>
+            <p> - Ok... îți mulțumesc... I suppose...</p>
+            <p> * poof *</p>
+        </section>
+
+        <section class="home-section" id="concept-section">
+        </section>
 
     </main>
 
@@ -156,6 +166,8 @@
 
 </body>
 
+<script src="js/logger.js"></script>
+<script src="js/home.js"></script>
 <script src="js/transitions.js"></script>
 <script src="js/editList.js"></script>
 <script src="js/examPage.js"></script>
