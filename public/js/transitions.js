@@ -64,6 +64,7 @@ function switchPage(page) {
             homeTopButtons.style.display = "block";
             break;
         case PagesEnum.Exam:
+            logEvent("exam button", `a pornit simularea`);
             examP.style.display = "block";
             examTopButtons.style.display = "block";
             getExam().then(function () {
@@ -76,6 +77,7 @@ function switchPage(page) {
             });
             break;
         case PagesEnum.Prepare:
+            logEvent("learn button", `a pornit pregatirea`);
             examP.style.display = "block";
             examTopButtons.style.display = "block";
             getExam().then(function () {
@@ -87,6 +89,7 @@ function switchPage(page) {
             });
             break;
         case PagesEnum.Continue:
+            logEvent("continue button", `se continua examenul`);
             loadExam();
             if (exam) {
                 examP.style.display = "block";
@@ -100,11 +103,13 @@ function switchPage(page) {
             }
             break;
         case PagesEnum.Edit:
+            logEvent("edit button", `se vizualizeaza lista de subiecte`);
             edit.style.display = "flex";
             editTopButtons.style.display = "block";
             updateEditList();
             break;
         case PagesEnum.EditEntry:
+            logEvent("edit subject", `se editeaza un subiect`);
             editEntry.style.display = "grid";
             autofillEntry();
             break;
