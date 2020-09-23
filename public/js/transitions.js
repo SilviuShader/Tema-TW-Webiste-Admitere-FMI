@@ -132,7 +132,7 @@ let conceptSection = document.getElementById("concept-section");
 let murphy = document.createElement("p");
 conceptSection.appendChild(murphy);
 
-murphy.textContent = ravaseStrings[Math.floor((Math.random() * ravaseStrings.length))];
+murphy.textContent = ravaseStrings[2];
 
 animateText(homeTutorial);
 animateText(conceptSection);
@@ -145,4 +145,4 @@ setInterval(function () {
     document.body.style.backgroundPosition = `${translationX}px ${translationY}px`;
     translationX += 2;
     translationY -= 1;
-}, 20);
+}, 50);
